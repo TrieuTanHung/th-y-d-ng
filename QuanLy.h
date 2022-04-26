@@ -5,11 +5,12 @@
 class QuanLy
 {
 private:
-	vector <SinhVien*> danhSachSinhVien;
+	vector<SinhVien *> danhSachSinhVien;
+
 public:
 	QuanLy();
 	~QuanLy();
-	void Nhap();
-	void Xuat();
-	
+	void nhap();
+	void xuat();
+	void tinhTongSVTN();
 };

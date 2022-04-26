@@ -12,14 +12,15 @@ protected:
 	int tuoi;
 	string MSSV;
 	int DTB;
+
 private:
 	DateTime ngaySinh;
+
 public:
 	SinhVien();
 	SinhVien(string, string, DateTime, float);
 	~SinhVien();
-	void Nhap();
-	void Xuat();
+
 	string get_hoTen();
 	void set_hoTen(string hoTen);
 	DateTime NgaySinh();
@@ -28,5 +29,8 @@ public:
 	void set_MSSV(string MSSV);
 	int get_DTB();
 	void set_DTB(int);
-};
 
+	virtual void nhap();
+	virtual void xuat();
+	virtual bool totNghiep() = 0;
+};

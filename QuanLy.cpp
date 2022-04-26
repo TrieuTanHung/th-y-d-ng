@@ -2,7 +2,6 @@
 
 QuanLy::QuanLy()
 {
-
 }
 
 QuanLy::~QuanLy()
@@ -14,7 +13,7 @@ QuanLy::~QuanLy()
     }
 }
 
-void QuanLy::Nhap()
+void QuanLy::nhap()
 {
     cout << "So luong hoc sinh: ";
     int n;
@@ -26,15 +25,46 @@ void QuanLy::Nhap()
         cout << "2.SVTT" << endl;
         int chon;
         cin >> chon;
-       
-        danhSachSinhVien[i]->Nhap();
+        if (chon == 1) // SVCQ
+        {
+            SinhVienCQ *sv = new SinhVienCQ();
+            sv->nhap();
+            danhSachSinhVien[i] = sv;
+        }
+        else if (chon == 2) // SVTT
+        {
+            SinhVienTT *sv = new SinhVienTT();
+            sv->nhap();
+            danhSachSinhVien[i] = sv;
+        }
     }
 }
-void QuanLy::Xuat()
+void QuanLy::xuat()
 {
 
     for (int i = 0; i < danhSachSinhVien.size(); i++)
     {
-        danhSachSinhVien[i]->Xuat();
+        danhSachSinhVien[i]->xuat();
     }
+}
+
+void QuanLy::tinhTongSVTN()
+{
+    vector<SinhVien *> dsSVTN;
+    int tongSVTN = 0;
+    for (int i = 0; i < danhSachSinhVien.size(); i++)
+    {
+        if (danhSachSinhVien[i]->totNghiep())
+        {
+            // tongSVTN++;
+            dsSVTN.push_back(danhSachSinhVien[i]);
+        }
+    }
+    cout << "\n\n";
+    cout << "So luong sinh vien tot nghiep: " << dsSVTN.size() << endl;
+    for (int i = 0; i < dsSVTN.size(); i++)
+    {
+        dsSVTN[i]->xuat();
+    }
+    cout << "\n\n";
 }
