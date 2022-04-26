@@ -6,10 +6,10 @@ class SinhVienCQ:public SinhVien
 public:
 	SinhVienCQ() {};
 	~SinhVienCQ() {};
-	virtual void DKTN()
+	bool totNghiep()
 	{
 		if (DTB >= 5)
-			cout << "Tot Nghiep";
+			return true;
 	}
 };
 

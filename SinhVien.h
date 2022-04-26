@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "DateTime.h"
 using namespace std;
 
 class SinhVien
@@ -11,15 +12,18 @@ protected:
 	int tuoi;
 	string MSSV;
 	int DTB;
+private:
+	DateTime ngaySinh;
 public:
 	SinhVien();
+	SinhVien(string, string, DateTime, float);
 	~SinhVien();
 	void Nhap();
 	void Xuat();
 	string get_hoTen();
 	void set_hoTen(string hoTen);
-	int get_Tuoi();
-	void set_Tuoi(int tuoi);
+	DateTime NgaySinh();
+	void setNgaySinh(DateTime);
 	string get_MSSV();
 	void set_MSSV(string MSSV);
 	int get_DTB();

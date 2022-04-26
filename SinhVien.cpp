@@ -2,8 +2,18 @@
 
 SinhVien::SinhVien()
 {
-
+	MSSV = "";
+	hoTen = "";
+	ngaySinh = DateTime::DateTime();
+	DTB = 0;
 }
+/*SinhVien::SinhVien(string MSSV, string hoTen, DateTime ngaySinh, float DTB)
+{
+	MSSV = MSSV;
+	hoTen = hoTen;
+	ngaySinh = ngaySinh;
+
+}*/
 SinhVien::~SinhVien()
 {
 
@@ -16,13 +26,11 @@ void SinhVien::set_hoTen(string hoTen)
 {
 	this->hoTen = hoTen;
 }
-int SinhVien::get_Tuoi()
-{
-	return tuoi;
+DateTime SinhVien::NgaySinh() {
+	return ngaySinh;
 }
-void SinhVien::set_Tuoi(int tuoi)
-{
-	this->tuoi = tuoi;
+void SinhVien::setNgaySinh(DateTime value) {
+	ngaySinh = value;
 }
 string SinhVien::get_MSSV()
 {
@@ -42,9 +50,9 @@ void SinhVien::set_DTB(int DTB)
 }
 void SinhVien::Nhap()
 {
+	cin.ignore();
 	cout << "Nhap ho ten: ";
 	getline(cin, hoTen);
-	//cin >> hoTen;
 	cout << "Nhap tuoi: ";
 	cin >> tuoi;
 	cout << "Nhap MSSV: ";
